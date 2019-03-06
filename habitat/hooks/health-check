@@ -1,0 +1,11 @@
+$STATUS=(invoke-webrequest  -method head -uri http://10.0.1.96:8099/hab_app).statuscode
+
+switch ($STATUS)
+{
+    200 { $LastExitCode=0 }
+    2 { $LastExitCode=2 }
+    3 { $LastExitCode=3 }
+    4 { $LastExitCode=4 }
+}
+
+exit $LastExitCode
