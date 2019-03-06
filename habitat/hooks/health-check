@@ -1,4 +1,4 @@
-$STATUS=(invoke-webrequest  -method head -uri http://10.0.1.96:8099/hab_app).statuscode
+$STATUS=(invoke-webrequest  -method head -uri http://{{sys.ip}}:{{cfg.port}}/{{cfg.app_name}}).statuscode
 
 switch ($STATUS)
 {
